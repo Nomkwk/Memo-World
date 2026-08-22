@@ -35,14 +35,16 @@ export default function IslandScene({
   });
   useKeyboard(input);
 
+  const safeMemories = Array.isArray(memories) ? memories : [];
+
   const memoryObstacles = useMemo(
     () =>
-      memories.map((m) => ({
+      safeMemories.map((m) => ({
         x: m.position_x,
         z: m.position_z,
         radius: 0.9,
       })),
-    [memories]
+    [safeMemories]
   );
 
   return (
@@ -73,7 +75,7 @@ export default function IslandScene({
       <Trees />
       <Lamps />
       <Rocks />
-      {memories.length === 0 && <EmptyState />}
+      {safeMemories.length === 0 && <EmptyState />}
 
       <Character
         input={input}
@@ -85,7 +87,7 @@ export default function IslandScene({
       <FollowCamera charState={charState} focusRef={cameraFocus} input={input} closeup={!!activeMemoryId} />
       <Particles charState={charState} />
       <MemoriesLayer
-        memories={memories}
+        memories={safeMemories}
         charState={charState}
         nearestId={nearestId}
         onOpenMemory={onOpenMemory}

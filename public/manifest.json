@@ -1,0 +1,15 @@
+{
+  "name": "Memo World",
+  "short_name": "Memo World",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A0B2E",
+  "theme_color": "#1A0B2E",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

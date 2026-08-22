@@ -36,7 +36,7 @@ export default function useWorld() {
         setWorld(w);
         const mems = await base44.entities.Memory.filter({ world_id: w.id });
         if (cancelled) return;
-        setMemories(mems);
+        setMemories(Array.isArray(mems) ? mems : []);
       } catch (e) {
         setError(e && e.message ? e.message : String(e));
       } finally {
