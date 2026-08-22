@@ -31,7 +31,7 @@ export default function MobileJoystick({ input }) {
     if (knobRef.current)
       knobRef.current.style.transform = `translate(${kx}px, ${ky}px)`;
     if (input.current)
-      input.current.joy = { x: kx / RADIUS, y: -ky / RADIUS };
+      input.current.joy = { x: -kx / RADIUS, y: -ky / RADIUS };
   };
 
   const onDown = (e) => {
