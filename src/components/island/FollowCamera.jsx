@@ -65,7 +65,9 @@ export default function FollowCamera({ charState, focusRef, input, closeup }) {
   useFrame((_, dt) => {
     // Briefly pan to a focus point (e.g. a newly created memory) when set.
     const f = focusRef && focusRef.current;
-    if (f && f.time > 0) {
+    if (f && !(Number.isFinite(f.pos?.[0]) && Number.isFinite(f.pos?.[1]) && Number.isFinite(f.pos?.[2]))) {
+      focusRef.current = null;
+    } else if (f && f.time > 0) {
       f.time -= dt;
       desired.current.set(
         BASE.x * 24 + f.pos[0],

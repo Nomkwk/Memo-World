@@ -159,7 +159,7 @@ export default function World() {
       });
       setMemories((prev) => [...prev, mem]);
       setNewMemoryId(mem.id);
-      cameraFocus.current = { pos: [mem.position_x, 1, mem.position_z], time: 2.5 };
+      cameraFocus.current = { pos: [pos.x, 1, pos.z], time: 2.5 };
       audio.chime();
       setTimeout(() => setNewMemoryId(null), 1200);
       if (notice) {
