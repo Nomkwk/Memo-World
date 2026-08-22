@@ -11,7 +11,7 @@ export default function EmptyState() {
           textAlign: "center",
           color: "#FBF3E0",
           userSelect: "none",
-          maxWidth: 280,
+          minWidth: 320
         }}
       >
         <div
@@ -28,7 +28,7 @@ export default function EmptyState() {
           width="64"
           height="64"
           viewBox="0 0 64 64"
-          style={{ marginTop: 6, transform: "rotate(-32deg)" }}
+          style={{ marginTop: 6, marginLeft: 100, transform: "rotate(-32deg)" }}
         >
           <path
             d="M12 52 L52 12 M52 12 L36 12 M52 12 L52 28"
